@@ -1,0 +1,70 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Post title:</strong>
+  <%= @post.post_title %>
+</p>
+
+<p>
+  <strong>Post content:</strong>
+  <%= @post.post_content %>
+</p>
+
+<p>
+  <strong>Post photo:</strong>
+  <%= @post.post_photo %>
+</p>
+
+<p>
+  <strong>Like:</strong>
+  <%= @post.like %>
+</p>
+
+<p>
+  <strong>Video:</strong>
+  <%= @post.video %>
+</p>
+
+<p>
+  <strong>Reblog:</strong>
+  <%= @post.reblog %>
+</p>
+
+<p>
+  <strong>Hashtags:</strong>
+  <%= @post.hashtags %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @post.user_id %>
+</p>
+
+<p>
+  <strong>Blog:</strong>
+  <%= @post.blog_id %>
+</p>
+
+<h2>Comment:</h2>
+	<%= form_for([@post, Comment.new]) do |f| %>
+	<%= f.text_area :comment_content, :rows => 4, :cols => 40 %>
+	<div class="actions">
+		<%= f.submit "Post a Comment"%>
+	</div>
+<% end %>
+
+<% if @post.comments.empty? %>
+	<h3>You are the first to comment </h3>
+<% else %>
+	<h2>What others felt about this:</h2>
+		<% @post.comments.reverse.each do |comment|%>
+		<p><%= comment.comment_content %>
+		Posted <%= time_ago_in_words(comment.created_at)%> ago by
+		<%=comment.user.name %></p>
+<% end %>
+<% end %>
+
+
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blogapp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+<div id = "banner">
+	<%= image_tag"blog2.jpg", :size => "300x150" %>
+</div>
+
+<div id = "nav">
+	<ul>
+		<li><%= link_to "Home", root_path  %></li>
+		<li><%= mail_to "c12386441@mydit.ie", "Contact us" %></li>
+		<li><%= link_to "Blogs", "blogs" %></li>
+		<li><%= link_to "Users", "users" %></li>
+		 <li><%= link_to "Posts", "posts" %></li>
+		<li><%= link_to "Sign up now!", "/users/new" %></li>
+	</ul>
+</div>
+
+<div>
+<% if !signed_in? %>
+			<li><%= link_to "Sign In", login_path %></li>
+		<% else %>
+			<li>Signed in as <%= @current_user.name %></li>
+			<li><%= link_to "Sign Out", logout_path %></li>
+		<%end %>
+</div>
+<%= yield %>
+</body>
+</html>
+
+

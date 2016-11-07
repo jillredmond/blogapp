@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161103230703) do
+ActiveRecord::Schema.define(version: 20161107001836) do
 
   create_table "blogs", force: :cascade do |t|
     t.string   "blog_name"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20161103230703) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "age"
   end
 
 end

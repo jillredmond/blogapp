@@ -1,3 +1,6 @@
+@import url(http://fonts.googleapis.com/css?family=Lora|Ubuntu:300,400,500); 
+@import "bootstrap-sprockets";
+@import "bootstrap";
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -12,19 +15,18 @@
  *= require_tree .
  */
 
- #banner {
+#banner {
   background: #9c9;
   padding: 10px;
   border-bottom: 2px solid;
   font: small-caps 40px/40px "Times New Roman", serif;
-  color: #285;
+  color: #282;
   text-align: center;
 
   img {
     float: left;
   }
 }
-
 
 #columns {
   background: yellow;

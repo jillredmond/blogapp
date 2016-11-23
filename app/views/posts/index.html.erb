@@ -1,19 +1,20 @@
-<p id="notice"><%= notice %></p>
+<center><p id="notice"><%= notice %></p>
 
-<h1>Listing Posts</h1>
+<Center><h1>Listing Posts</h1>
 
 <table>
-  <thead>
+  <thead style="width:100%">
     <tr>
       <th>Post title</th>
-      <th>Post content</th>
-      <th>Post photo</th>
-      <th>Like</th>
-      <th>Video</th>
-      <th>Reblog</th>
-      <th>Hashtags</th>
-      <th>User</th>
-      <th>Blog</th>
+      <th>Post content|</th>
+      <th>Post photo | </th>
+      <th>Like | </th>
+      <th>Video|</th>
+      <th>Reblog|</th>
+      <th>Hashtags|</th>
+      <th>User|</th>
+      <th>Blog|</th>
+	  <th>Time post was made</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -30,7 +31,7 @@
         <td><%= post.hashtags %></td>
         <td><%= post.user_id%></td>
         <td><%= post.blog.blog_name if post.blog.present?%></td>
-		<%= timeago_tag post.created_at, :nojs => true, :limit => 1.day.ago %>
+		<td><%= timeago_tag post.created_at, :nojs => true, :limit => 1.day.ago %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -41,4 +42,4 @@
 
 <br>
 
-<%= link_to 'New Post', new_post_path %>
+<%= link_to 'New Post', new_post_path %></center></center>

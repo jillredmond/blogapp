@@ -6,12 +6,20 @@ class BlogsController < ApplicationController
   # GET /blogs.json
   def index
     @blogs = Blog.all
+	 @users = User.all
+    @user = User.find(params[:id])||current_user
   end
+  
+  def show_blog
+  @user = User.find(params[:id])
+  @blogs = @user.blogs
+  posts = @user.posts
+end
+helper_method :show_blog
 
   # GET /blogs/1
   # GET /blogs/1.json
-  def show
-  end
+  
 
   # GET /blogs/new
   def new

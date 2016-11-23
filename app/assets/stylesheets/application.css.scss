@@ -16,11 +16,11 @@
  */
 
 #banner {
-  background: #9c9;
+  background: #9BF1E6;
   padding: 10px;
   border-bottom: 2px solid;
-  font: small-caps 40px/40px "Times New Roman", serif;
-  color: #282;
+  font: small-caps 40px/40px "Lora", serif;
+  color: #0F1111;
   text-align: center;
 
   img {
@@ -86,7 +86,7 @@
 }
 
 #nav {
-  background-color: #00FFFF;
+  background-color: #9BF1E6;
   padding: 0 0.7em;
   white-space: nowrap;
 }
@@ -108,9 +108,13 @@
 }
 
 #nav ul li a:visited {
-  color: #09c;
+  color: #0F1111;
 }
 
 #nav ul li a:hover {
   text-decoration: underline;
   }
+  
+  
+  
+
